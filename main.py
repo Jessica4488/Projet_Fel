@@ -8,6 +8,7 @@
 import os.path as osp
 import configparser as cp
 
+
 # external imports
 import pkg_resources as pkgr
 import pyvisa
@@ -52,10 +53,11 @@ class SMUSettingsWidget(SettingsWidget):
         self.limit_v = self.addDoubleField("Voltage limit:", 200, "V", limits=[0, 200])
         self.level_i = self.addDoubleField("Current level:", 0.1, "A", limits=[0, 100])
         self.level_v = self.addDoubleField("Voltage level:", 200, "V", limits=[0, 200])
-        self.scale_f = self.addCheckBox("Scale factor", checked=False)
-        
-
+        self.level_s = self.addDoubleField("Scale factor:", 1000, limits=[0, 1000])
+        self.on_off = self.add
         self.load_defaults()
+
+
 
     def load_defaults(self):
 
@@ -71,7 +73,7 @@ class SMUSettingsWidget(SettingsWidget):
 
                 self.limit_i.setValue(CONF.get(self.smu_name, "limiti"))
                 self.limit_v.setValue(CONF.get(self.smu_name, "limitv"))
-                self.high_c.setChecked(CONF.get(self.smu_name, "highc"))
+               # self.high_c.setChecked(CONF.get(self.smu_name, "highc"))
             except cp.NoSectionError:
                 pass
 
@@ -86,7 +88,7 @@ class SMUSettingsWidget(SettingsWidget):
 
             CONF.set(self.smu_name, "limiti", self.limit_i.value())
             CONF.set(self.smu_name, "limitv", self.limit_v.value())
-            CONF.set(self.smu_name, "highc", self.high_c.isChecked())
+            #CONF.set(self.smu_name, "highc", self.high_c.isChecked())
 
 
 # no inspection PyArgumentList
