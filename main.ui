@@ -49,10 +49,8 @@
          <number>0</number>
         </property>
         <widget class="QWidget" name="tab1">
-         <attribute name="title">
-          <string>Transfersdfghj</string>
-         </attribute>
          <layout class="QVBoxLayout" name="_2">
+         
           <property name="topMargin">
            <number>0</number>
           </property>
@@ -61,11 +59,10 @@
           </property>
          </layout>
         </widget>
+
         <widget class="QWidget" name="tab2">
-         <attribute name="title">
-          <string>Output</string>
-         </attribute>
          <layout class="QGridLayout" name="_3">
+
           <property name="topMargin">
            <number>0</number>
           </property>
@@ -74,11 +71,13 @@
           </property>
          </layout>
         </widget>
+
         <widget class="QWidget" name="tab3">
-         <attribute name="title">
-          <string>IV</string>
+        <attribute name="title">
+          <string>I/V</string>
          </attribute>
          <layout class="QGridLayout" name="gridLayout_7">
+
           <property name="topMargin">
            <number>0</number>
           </property>
@@ -89,6 +88,7 @@
         </widget>
        </widget>
       </item>
+
       <item row="3" column="0" colspan="2">
        <widget class="QLabel" name="label_2">
         <property name="font">

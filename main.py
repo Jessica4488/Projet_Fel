@@ -86,7 +86,7 @@ class SMUSettingsWidget(SettingsWidget):
             CONF.set(self.smu_name, "highc", self.high_c.isChecked())
 
 
-# noinspection PyArgumentList
+# no inspection PyArgumentList
 class SweepSettingsWidget(SettingsWidget):
     def __init__(self, keithley):
         super().__init__()
