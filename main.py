@@ -50,7 +50,10 @@ class SMUSettingsWidget(SettingsWidget):
         )
         self.limit_i = self.addDoubleField("Current limit:", 0.1, "A", limits=[0, 100])
         self.limit_v = self.addDoubleField("Voltage limit:", 200, "V", limits=[0, 200])
-        self.high_c = self.addCheckBox("High capacitance mode", checked=False)
+        self.level_i = self.addDoubleField("Current level:", 0.1, "A", limits=[0, 100])
+        self.level_v = self.addDoubleField("Voltage level:", 200, "V", limits=[0, 200])
+        self.scale_f = self.addCheckBox("Scale factor", checked=False)
+        
 
         self.load_defaults()
 
@@ -261,14 +264,13 @@ class KeithleyGuiApp(QtWidgets.QMainWindow):
         self.sweep_data = None
 
         # create sweep settings panes
-        self.transfer_sweep_settings = TransferSweepSettingsWidget()
-        self.output_sweep_settings = OutputSweepSettingsWidget()
+    
         self.iv_sweep_settings = IVSweepSettingsWidget(self.keithley)
+
         self.general_sweep_settings = SweepSettingsWidget(self.keithley)
 
-        self.tabWidgetSweeps.widget(0).layout().addWidget(self.transfer_sweep_settings)
-        self.tabWidgetSweeps.widget(1).layout().addWidget(self.output_sweep_settings)
-        self.tabWidgetSweeps.widget(2).layout().addWidget(self.iv_sweep_settings)
+        self.tabWidgetSweeps.widget(0).layout().addWidget(self.iv_sweep_settings)
+
         self.groupBoxSweepSettings.layout().addWidget(self.general_sweep_settings)
 
         # create tabs for smu settings
@@ -566,8 +568,6 @@ class KeithleyGuiApp(QtWidgets.QMainWindow):
         """Load default settings to interface."""
 
         # load sweep settings
-        self.transfer_sweep_settings.load_defaults()
-        self.output_sweep_settings.load_defaults()
         self.iv_sweep_settings.load_defaults()
         self.general_sweep_settings.load_defaults()
 
