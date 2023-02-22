@@ -54,7 +54,11 @@ class SMUSettingsWidget(SettingsWidget):
         self.level_i = self.addDoubleField("Current level:", 0.1, "A", limits=[0, 100])
         self.level_v = self.addDoubleField("Voltage level:", 200, "V", limits=[0, 200])
         self.level_s = self.addDoubleField("Scale factor:", 1000, limits=[0, 1000])
-        self.on_off = self.add
+        
+        self.sense_type = self.addSelectionField(
+            "ON/OFF:", ["On", "Off"]
+        )
+
         self.load_defaults()
 
 
