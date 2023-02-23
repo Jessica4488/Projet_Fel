@@ -80,7 +80,7 @@ class SweepDataPlotTime(pg.GraphicsView):
         self.x_axis = self.p.getAxis("bottom")
         self.y_axis = self.p.getAxis("left")
 
-        self.x_axis.setLabel("Voltage", units="V", color="k", size="12pt")
+        self.x_axis.setLabel("Time", units="T", color="k", size="12pt")
         self.y_axis.setLabel("Current", units="A", color="k", size="12pt")
         self.y_axis.setStyle(tickTextWidth=35)
 
