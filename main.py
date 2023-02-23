@@ -19,8 +19,10 @@ import numpy as np
 
 # local imports
 from keithleygui.pyqt_labutils import LedIndicator, SettingsWidget, ConnectionDialog
+from keithleygui.pyqtplot_canvas_time import SweepDataPlotTime
 from keithleygui.pyqtplot_canvas import SweepDataPlot
 from keithleygui.config.main import CONF
+
 
 MAIN_UI_PATH = pkgr.resource_filename("keithleygui", "main.ui")
 
@@ -291,7 +293,7 @@ class KeithleyGuiApp(QtWidgets.QMainWindow):
         self.gridLayout2.addWidget(self.canvas)
 
         # create plot widget2
-        self.canvas = SweepDataPlot()
+        self.canvas = SweepDataPlotTime()
         self.gridLayout2.addWidget(self.canvas)
 
         # create LED indicator
