@@ -56,7 +56,7 @@ class SMUSettingsWidget(SettingsWidget):
         self.level_s = self.addDoubleField("Scale factor:", 1000, limits=[0, 1000])
         
         self.sense_type = self.addSelectionField(
-            "ON/OFF:", ["On", "Off"]
+            "ON / OFF:", ["On", "Off"]
         )
 
         self.load_defaults()
@@ -287,6 +287,10 @@ class KeithleyGuiApp(QtWidgets.QMainWindow):
             self.smu_tabs.append(tab)
 
         # create plot widget
+        self.canvas = SweepDataPlot()
+        self.gridLayout2.addWidget(self.canvas)
+
+        # create plot widget2
         self.canvas = SweepDataPlot()
         self.gridLayout2.addWidget(self.canvas)
 
