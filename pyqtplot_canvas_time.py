@@ -57,6 +57,7 @@ class SweepDataPlotTime(pg.GraphicsView):
 
         self.p = pg.PlotItem(axisItems=axisItems)
         self.setTitle("Sweep data/Time", fontScaling=1.3, color="k")
+        
         self.layout.addItem(self.p)
 
         self.p.vb.setBackgroundColor("w")
