@@ -29,3 +29,5 @@ Cette ligne permet la création du bouton ON/OFF en frontend mais il faut intég
 Conclusion:
 Plusieurs boutons ayant été créés ne sont pas fonctionnel ainsi que la courbe de temps, le travail consistera à coder cela afin de finaliser l'interface graphique.
 
+*Pour plus d'informations voir le PowerPoint dans le dossier Projet_Fel*
+
